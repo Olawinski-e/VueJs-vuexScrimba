@@ -1,13 +1,19 @@
 <template>
   <div>
-    <p>{{ count }}</p>
-    <button @click="incrementAsync" class="btn btn-primary mr-2">+</button>
-    <button @click="incrementBy({ amount: 10 })" class="btn btn-warning">
-      +10
-    </button>
-    <button @click="decrement" class="btn btn-danger ml-2">-</button>
+    <div class="jumbotron mx-4 mb-3">
+      <p class="mb-3">Count: {{ count }}</p>
+      <div clas="row">
+        <button @click="incrementAsync" class="btn btn-primary mr-2">+</button>
+        <button @click="incrementBy({ amount: 10 })" class="btn btn-warning">
+          +10
+        </button>
+        <button @click="decrement" class="btn btn-danger ml-2">-</button>
+      </div>
+    </div>
 
-    <p class="my-3">Completed Todos: {{ doneTodosCount }}</p>
+    <p class="my-2">Completed Todos: {{ doneTodosCount }}</p>
+
+    <p>Objects in Array: {{ getHello }}</p>
   </div>
 </template>
 
@@ -22,8 +28,13 @@ export default {
   },
   computed: {
     ...mapState(["count"]),
-    ...mapGetters(["countPlusLocalState"]),
-    ...mapGetters(["doneTodos", "doneTodosCount", "getTodosById"]),
+    ...mapGetters([
+      "countPlusLocalState",
+      "doneTodos",
+      "doneTodosCount",
+      "getTodosById",
+      "getHello",
+    ]),
   },
   methods: {
     ...mapMutations(["increment", "incrementBy", "decrement"]),

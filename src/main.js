@@ -20,3 +20,11 @@ new Vue({
 //store.commit("incrementBy", { amount: 13 });
 //console.log(store.state.count);
 // console.log(store.getters.getTodoById(1));
+// console.log(store.state.a.count);
+// store.commit("increment");
+// console.log(store.state.a.count);
+// console.log(store.state.b.count);
+
+store.commit("b/login");
+store.dispatch("b/login");
+store.getters["b/login"];
