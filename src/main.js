@@ -17,5 +17,6 @@ new Vue({
   render: (h) => h(App),
 }).$mount("#app");
 
-// store.commit("increment");
-// console.log(store.state.count);
+//store.commit("incrementBy", { amount: 13 });
+//console.log(store.state.count);
+// console.log(store.getters.getTodoById(1));
