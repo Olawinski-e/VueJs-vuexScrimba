@@ -8,5 +8,7 @@ export default {
   decrement(state) {
     state.count--;
   },
-  testAction() {},
+  updateMessage(state, message) {
+    state.message = message;
+  },
 };

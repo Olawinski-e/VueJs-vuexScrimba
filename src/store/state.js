@@ -1,6 +1,7 @@
 export default {
   count: 3,
   localCount: 4,
+  message: "Hello You",
 
   todos: [
     { id: 1, text: "...", done: true },

@@ -69,6 +69,7 @@ const moduleB = {
 };
 
 export default new Vuex.Store({
+  strict: true,
   modules: {
     a: moduleA,
     b: moduleB,

@@ -14,6 +14,13 @@
     <p class="my-2">Completed Todos: {{ doneTodosCount }}</p>
 
     <p>Objects in Array: {{ getHello }}</p>
+
+    <div class="jumbotron mx-4">
+      {{ message }}
+      <div class="d-flex justify-content-center">
+        <input v-model="message" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,10 +42,21 @@ export default {
       "getTodosById",
       "getHello",
     ]),
+    message: {
+      get() {
+        return this.$store.state.message;
+      },
+      set(value) {
+        this.$store.commit("updateMessage", value);
+      },
+    },
   },
   methods: {
-    ...mapMutations(["increment", "incrementBy", "decrement"]),
+    ...mapMutations(["increment", "incrementBy", "decrement", "updateMessage"]),
     ...mapActions(["incrementAsync"]),
+    updateMessage(e) {
+      this.$store.commit("updateMessage", e.target.value);
+    },
   },
 };
 
